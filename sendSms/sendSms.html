@@ -1,0 +1,24 @@
+<!--
+  @description       : 
+  @author            : Lars Østergaard
+  @group             : 
+  @last modified on  : 07-08-2021
+  @last modified by  : Lars Østergaard
+  Modifications Log 
+  Ver   Date         Author            Modification
+  1.0   03-19-2021   Lars Østergaard   Initial Version
+-->
+<template>
+    <lightning-card title="Send SMS demo">
+        <div class="slds-var-m-around_small">
+            <label class="slds-form-element__label">
+              <span class="slds-var-m-left_small">Only works if your mobile number is whitelisted in StreamServe</span>
+            </label>
+            <lightning-input data-id='mobileInput' type="tel" label="Mobile" name="mobile" value="" pattern="^\d{8}$" onchange={handleMobileInputChange}></lightning-input>
+            <lightning-input data-id='textInput' type="text" label="Enter some text" value="" onchange={handleSmsTextInputChange}></lightning-input>
+            <div class="slds-clearfix slds-var-m-around_small">
+                <lightning-button data-id='sendButton' class="slds-float_right" variant="brand" label="Send SMS" title="Send SMS" onclick={handleSendSms} disabled={disableButton}></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>
